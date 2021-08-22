@@ -1,14 +1,16 @@
 #welcome to my breakdowne' of an astro image, or ig any image but you wouldnt get any data and
 #half the functions wont work, so in any case, lets begin!
-
+import time
+start = time.time()
 print('loading required modules...')
 import getpass
 import cv2 as cv
 import numpy as np
 user = getpass.getuser()
 threshold = 0.35
-
-print('Loaded.')
+end = time.time()
+finished = end - start
+print(f'Loaded in {finished}.')
 print(f'Welcome to ImageX BREAKDOWN {user}!')
 print('Lets begin, first type in the full path to the image, or if its in the ''same directory, just type the name!')
 path = input()
@@ -52,8 +54,8 @@ def colours():
     b[:, :, 2] = 0
     cv.imshow('blue', b)
 
-def histogram():
-    
+
+
 load_functions()
 colours()
 star_detction()
